@@ -1,0 +1,4 @@
+com\hitty\hmall\config\AuthInterceptor.class
+com\hitty\hmall\config\WebConst.class
+com\hitty\hmall\config\WebMvcConfiguration.class
+com\hitty\hmall\config\CookieUtil.class

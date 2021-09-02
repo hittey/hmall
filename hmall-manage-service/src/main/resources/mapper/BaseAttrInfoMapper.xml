@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hitty.hmall.manage.mapper.BaseAttrInfoMapper">
+
+    <!--resultMap：返回结果集   id:表示唯一标识   type：返回结果集数据类型   autoMapping: 自动映射！ -->
+    <resultMap id="baseAttrInfoMap" type="com.hitty.hmall.bean.BaseAttrInfo" autoMapping="true">
+
+        <!--id:表示主键 property:表示实体类的属性名 column：表中的字段名-->
+        <id property="id" column="id"></id>
+
+        <!-- ofType: 返回集合的属性对象-->
+        <collection property="attrValueList" ofType="com.hitty.hmall.bean.BaseAttrValue" autoMapping="true">
+            <id property="id" column="attr_value_id"></id>
+        </collection>
+
+    </resultMap>
+
+
+    <select id="selectAttrInfoList" resultMap="baseAttrInfoMap">
+        select bai.id,bai.attr_name,bai.catalog3_id,
+        bav.id attr_value_id,
+        bav.value_name
+        from base_attr_info bai
+        inner join base_attr_value bav
+        on bai.id=bav.attr_id
+        where bai.catalog3_id=#{catalog3_id}
+    </select>
+
+    <select id="selectAttrInfoListByIds" resultMap="baseAttrInfoMap">
+        SELECT ai.id,ai.attr_name,ai.catalog3_id,
+        av.id attr_value_id,av.attr_id,av.value_name
+        FROM base_attr_info ai
+        INNER JOIN base_attr_value av
+        ON ai.id=av.attr_id
+        WHERE av.id IN (${valueIds})
+    </select>
+
+</mapper>

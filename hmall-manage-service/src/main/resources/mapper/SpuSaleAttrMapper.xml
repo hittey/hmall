@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hitty.hmall.manage.mapper.SpuSaleAttrMapper">
+
+    <!--resultMap：返回结果集   id:表示唯一标识   type：返回结果集数据类型   autoMapping: 自动映射！ -->
+    <resultMap id="spuSaleAttrMap" type="com.hitty.hmall.bean.SpuSaleAttr" autoMapping="true">
+
+        <!--id:表示主键 property:表示实体类的属性名 column：表中的字段名-->
+        <id property="id" column="id"></id>
+
+        <!-- ofType: 返回集合的属性对象-->
+        <collection property="spuSaleAttrValueList" ofType="com.hitty.hmall.bean.SpuSaleAttrValue" autoMapping="true">
+            <id property="id" column="sale_attr_value_id"></id>
+        </collection>
+
+    </resultMap>
+
+
+    <select id="selectSpuSaleAttrList" resultMap="spuSaleAttrMap">
+        SELECT sar.id,sar.spu_id,sar.sale_attr_id,sale_attr_name,
+        sarv.id sale_attr_value_id,
+        sarv.sale_attr_value_name
+        from spu_sale_attr sar
+        INNER JOIN spu_sale_attr_value sarv
+        on sar.sale_attr_id=sarv.sale_attr_id
+        and sar.spu_id=sarv.spu_id
+        WHERE sar.spu_id=#{spu_id}
+    </select>
+
+    <select id="selectSpuSaleAttrListBySku" resultMap="spuSaleAttrMap">
+        SELECT
+        ssa.id,ssa.spu_id,
+        ssa.sale_attr_id,
+        ssa.sale_attr_name,
+        ssav.id sale_attr_value_id,
+        ssav.sale_attr_value_name,
+        ksav.id sku_sale_attr_value_id,
+        IF(ksav.id IS NULL,0,1) is_check
+        from spu_sale_attr ssa
+        INNER JOIN spu_sale_attr_value ssav
+        ON ssa.spu_id=ssav.spu_id
+        AND ssa.sale_attr_id=ssav.sale_attr_id
+        LEFT JOIN sku_sale_attr_value ksav
+        ON ksav.sale_attr_id=ssa.sale_attr_id
+        AND ksav.sale_attr_value_id=ssav.id
+        AND ksav.sku_id=#{arg0}
+        WHERE ssa.spu_id=#{arg1}
+    </select>
+
+</mapper>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hmall-item-web" />
+        <module name="hmall-order-web" />
+        <module name="hmall-web-util" />
+        <module name="hmall-passport-web" />
+        <module name="hmall-manage-web" />
+        <module name="hmall-manage-service" />
+        <module name="fastdfs-client-java" />
+        <module name="hmall-list-web" />
+        <module name="hmall-user-manage" />
+        <module name="hmall-service-util" />
+        <module name="hmall-list-service" />
+        <module name="hmall-bean" />
+        <module name="hmall-interface" />
+        <module name="hmall-common-util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="12">
+      <module name="fastdfs-client-java" target="1.8" />
+      <module name="hmall-bean" target="1.8" />
+      <module name="hmall-common-util" target="1.8" />
+      <module name="hmall-interface" target="1.8" />
+      <module name="hmall-item-web" target="1.8" />
+      <module name="hmall-list-service" target="11" />
+      <module name="hmall-list-web" target="11" />
+      <module name="hmall-manage-service" target="11" />
+      <module name="hmall-manage-web" target="11" />
+      <module name="hmall-order-web" target="11" />
+      <module name="hmall-parent" target="1.8" />
+      <module name="hmall-passport-web" target="11" />
+      <module name="hmall-service-util" target="1.8" />
+      <module name="hmall-user-manage" target="11" />
+      <module name="hmall-web-util" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hmall-bean" options="" />
+      <module name="hmall-common-util" options="" />
+      <module name="hmall-interface" options="" />
+      <module name="hmall-item-web" options="" />
+      <module name="hmall-list-service" options="" />
+      <module name="hmall-list-web" options="" />
+      <module name="hmall-manage-service" options="" />
+      <module name="hmall-manage-web" options="" />
+      <module name="hmall-order-web" options="" />
+      <module name="hmall-service-util" options="" />
+      <module name="hmall-user-manage" options="" />
+      <module name="hmall-web-util" options="" />
+    </option>
+  </component>
+</project>

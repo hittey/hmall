@@ -1,0 +1,15 @@
+com\hitty\hmall\bean\SkuSaleAttrValue.class
+com\hitty\hmall\bean\SkuLsResult.class
+com\hitty\hmall\bean\SkuAttrValue.class
+com\hitty\hmall\bean\BaseAttrValue.class
+com\hitty\hmall\bean\BaseCatalog1.class
+com\hitty\hmall\bean\BaseAttrInfo.class
+com\hitty\hmall\bean\SkuImage.class
+com\hitty\hmall\bean\SpuInfo.class
+com\hitty\hmall\bean\BaseCatalog2.class
+com\hitty\hmall\bean\BaseSaleAttr.class
+com\hitty\hmall\bean\SpuImage.class
+com\hitty\hmall\bean\BaseCatalog3.class
+com\hitty\hmall\bean\SpuSaleAttrValue.class
+com\hitty\hmall\bean\SpuSaleAttr.class
+com\hitty\hmall\bean\SkuLsParam.class
