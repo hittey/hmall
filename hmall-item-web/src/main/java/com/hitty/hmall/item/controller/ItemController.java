@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSON;
 import com.hitty.hmall.bean.SkuInfo;
 import com.hitty.hmall.bean.SkuSaleAttrValue;
 import com.hitty.hmall.bean.SpuSaleAttr;
+import com.hitty.hmall.config.LoginRequire;
 import com.hitty.hmall.service.ListService;
 import com.hitty.hmall.service.ManageService;
 import net.minidev.json.JSONUtil;
@@ -27,6 +28,7 @@ public class ItemController {
     @Reference
     private ListService listService;
 
+    @LoginRequire
     @RequestMapping("{skuId}.html")
     public String item(@PathVariable String skuId, HttpServletRequest request){
         //根据skuId回显商品详情和图片信息
